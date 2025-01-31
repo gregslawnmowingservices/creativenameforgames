@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ij,al,cd's C00lsite</title>
+    <meta charset="UTF-8" />
+
+    <!-- Windows XP Theme (include only one theme at a time) -->
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    <style>
+        body {background-color: teal;}
+        html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+.fix{
+    position:fixed;
+    bottom:0px;
+    left:50%;
+}
+.frame
+{
+    width: 1280px;
+    height: 786px;
+    border: 0;
+
+    -ms-transform: scale(0.25);
+    -moz-transform: scale(0.25);
+    -o-transform: scale(0.25);
+    -webkit-transform: scale(0.25);
+    transform: scale(0.25);
+
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+const tabs = document.querySelectorAll("menu[role=tablist]");
+
+for (let i = 0; i < tabs.length; i++) {
+  const tab = tabs[i];
+
+  const tabButtons = tab.querySelectorAll("menu[role=tablist] > button");
+
+  tabButtons.forEach((btn) =>
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      tabButtons.forEach((button) => {
+        if (
+          button.getAttribute("aria-controls") ===
+          e.target.getAttribute("aria-controls")
+        ) {
+          button.setAttribute("aria-selected", true);
+          openTab(e, tab);
+        } else {
+          button.setAttribute("aria-selected", false);
+        }
+      });
+    })
+  );
+}
+  
+});
+
+
+function openTab(event, tab) {
+  const articles = tab.parentNode.querySelectorAll('[role="tabpanel"]');
+  articles.forEach((p) => {
+    p.setAttribute("hidden", true);
+  });
+  const article = tab.parentNode.querySelector(
+    `[role="tabpanel"]#${event.target.getAttribute("aria-controls")}`
+  );
+  article.removeAttribute("hidden");
+}
+    </script>
+
+  </head>
+
+  <body>
+    <div class="window" style="width: 100%">
+  <div class="title-bar">
+    <div class="title-bar-text">DREWTSAFTW! ! !</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <menu role="tablist">
+      <button aria-selected="true" aria-controls="Docs">Documentation</button>
+      <button aria-controls="Game">Game</button>
+      <button aria-controls="Creds">Credits</button>
+      <button aria-controls="Resume">Resume</button>
+    </menu>
+    <article role="tabpanel" id="Docs">
+        <h4>Main Game Concept = Late 2006 <a href="http://www.roblox.com/">Roblox</a></h4>
+        <p>
+            All levels in the game are based on this.
+        </p>
+        
+        <p>
+            Stage 1: ulhh we just came up with it lowk
+            <br>Stage 2: It's really just a volcano level we came up with
+            <br>Stage 3: based on a roblox event from october 21'st 2006.
+            <br>Stage 4: Based on <a href="https://www.roblox.com/games/7851794/Tornado-Alley-Classic">Tornado Alley Classic</a>, Which is a game Imari had good memories with as a child
+            <br>Stage 5 is based on <a href="https://www.roblox.com/games/487316/Sword-Fight-on-the-Heights-Original">Sword Fight On The Hights.</a> a game by a past roblox admin named John Shedletsky
+            <br>Stage 6 is just a random cloud level.
+            <br>Stage 7 is based on <a href="https://www.roblox.com/games/181118/ROBLOX-World-Headquarters">Roblox HQ</a>, made back in 2008.
+            <h4>Scrapped Concepts</h4>
+        <p>
+            We originally were going to add a sword to the game. although this was scrapped as soon as we all realized that no violence was allowed.
+            <br>
+            <br>A Health/Damage system was considered. but had the same fate as the sword mechanic.
+            <br>
+            <br>A Skateboard ability was considered as well, but it was tried time and time again and wouldn't work correctly. which ended in it being scrapped as well.
+            <br>
+            <br>A Bossfight with John Shedletsky was considered on stage 5, although the "no violence" rule crushed that idea.
+        </p>
+            <H4>Music:</H4>
+            <p>
+                <a href="https://finobe.bandcamp.com/album/unofficial-roblox-soundtrack-deluxe-edition">The Unofficial Roblox Soundtrack</a>
+            </p>
+            
+            <h4>SFX:</h4>
+            <p>
+                All SFX are sourced from <a href="https://archive.roblonium.com/">Roblox Archive</a>
+            </p>
+      </article>
+ 
+        
+    <article role="tabpanel" hidden id="Game">
+      <p>
+          <iframe src="game/index.html" height="500" width="1000"></iframe>
+      </p>
+    </article>
+
+    <article role="tabpanel" hidden id="Resume">
+      <img src="Resume.PNG" alt="Resume">
+    </article>
+
+    <article role="tabpanel" hidden id="Creds">
+      <p>
+        Coded By Imari Jones
+      </p>
+      <p>
+        Ideas/Concepts by Caleb Denkas & Alvin Landry
+      </p>
+      <p>
+          Roblox Was Created By David Baszuki and Erik Cassel
+      </p>
+      <p>
+        made with vsc and gdscript
+      </p>
+    </article>
+    <section class="field-row" style="justify-content: flex-end">
+      <button>OK</button>
+      <button>Cancel</button>
+    </section>
+  </div>
+</div>
+  </body>
+</html>
