@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1738350477|2631151708';
+const CACHE_VERSION = '1738378181|238934066';
 /** @type {string} */
 const CACHE_PREFIX = 'VGdesigncomp-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
